@@ -7,6 +7,10 @@
 - [ ] fields
 - [ ] constructors
 - [ ] methods
+ - [ ] size()
+ - [ ] toString()
+ - [ ] add(int value)
+ - [ ] expand()
 
 ###### Remarks on the UserOfList class
 It should test the various features of a list
