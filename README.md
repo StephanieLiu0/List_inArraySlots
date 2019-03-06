@@ -6,7 +6,7 @@
 #### Members of List_inArraySlots
 - [ ] fields
 - [ ] constructors
-- [ ] methods
+- methods
  - [ ] size()
  - [ ] toString()
  - [ ] add(int value)
