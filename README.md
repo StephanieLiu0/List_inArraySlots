@@ -1,7 +1,7 @@
 # List_inArraySlots
 ### Collaborators
--Junhee Lee
--Stephanie Liu
+- Junhee Lee
+- Stephanie Liu
 
 #### Members of List_inArraySlots
 - [ ] fields
