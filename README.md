@@ -5,6 +5,8 @@
 
 #### Members of List_inArraySlots
 ##### fields
+ - [ ] int[] values
+ - [ ] int end
 ##### constructors
  - [ ] List_inArraySlots()
 ##### methods
