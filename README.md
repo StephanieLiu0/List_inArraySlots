@@ -4,15 +4,16 @@
 - Stephanie Liu
 
 #### Members of List_inArraySlots
-- [ ] fields
-- [ ] constructors
-- methods
+##### fields
+##### constructors
+ - [ ] List_inArraySlots()
+##### methods
  - [ ] size()
  - [ ] toString()
  - [ ] add(int value)
  - [ ] expand()
 
-###### Remarks on the UserOfList class
+#### Remarks on the UserOfList class
 It should test the various features of a list
 including, but not limited to:
  - adding specific elements
