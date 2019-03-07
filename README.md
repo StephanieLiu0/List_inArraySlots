@@ -5,15 +5,15 @@
 
 #### Members of List_inArraySlots
 ##### fields
- - [ ] int[] values
- - [ ] int end
+ - [X] int[] values
+ - [X] int end
 ##### constructors
- - [ ] List_inArraySlots()
+ - [X] List_inArraySlots()
 ##### methods
- - [ ] size()
- - [ ] toString()
- - [ ] add(int value)
- - [ ] expand()
+ - [X] size()
+ - [X] toString()
+ - [X] add(int value)
+ - [X] expand()
 
 #### Remarks on the UserOfList class
 It should test the various features of a list
