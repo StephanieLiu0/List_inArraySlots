@@ -9,12 +9,14 @@ public class List_inArraySlots {
     private int[] list;
     private int filledElements;
 
+    private static final int INITIAL_CAPACITY = 10;
+
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-	list = new int[8]; //I like using powers of 2 -Junhee
-	filledElements = 0;
+	list = new int[INITIAL_CAPACITY];
+	// filledElements is initialized to 0
     }
 
 
@@ -33,10 +35,9 @@ public class List_inArraySlots {
     public String toString() {
 	String output = "[ ";
 	for (int i = 0; i < filledElements; i++) {
-	    output += list[i] + ", ";
+	    output += list[i] + ",";
 	}
-	output += "]";
-	return output;
+	return output + "]";
     }
 
     
@@ -59,10 +60,10 @@ public class List_inArraySlots {
      */
      private void expand() {
 	 System.out.println( "expand... (for debugging)");
-	 int[] oldList = list;
-	 list = new int[oldList.length * 2]; //filledElements -> oldList.length
-	 for (int i = 0; i < oldList.length; i++) { //makes more sense to me
-	     list[i] = oldList[i];
-	 }
+	 
+	 int[] newList = new int[list.length * 2];
+	 for (int i = 0; i < filledElements; i++)
+	     newList[i] = list[i];
+	 list = newList;
      }
 }
