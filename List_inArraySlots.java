@@ -5,65 +5,129 @@
 
 public class List_inArraySlots {
 
-    // declare fields here
-    private int[] list;
-    private int filledElements;
+    private int[] elements;     // container for the elements of the list
+    private int filledElements; // the number of elements in this list
 
     private static final int INITIAL_CAPACITY = 10;
 
+    
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-	list = new int[INITIAL_CAPACITY];
-	// filledElements is initialized to 0
+        elements = new int[ INITIAL_CAPACITY];
+        // filledElements has been initialized to the desired value, 0
     }
-
-
-    /** 
+    
+    /**
       @return the number of elements in this list
      */
     public int size() {
-	return filledElements;
+        return filledElements;
     }
 
 
-     /** 
+     /**
        @return a string representation of this list,
        in [a,b,c,] format
-      */ 
+      */
     public String toString() {
-	String output = "[ ";
-	for (int i = 0; i < filledElements; i++) {
-	    output += list[i] + ",";
-	}
-	return output + "]";
+        String result = "[";
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            result += elements[ elemIndex] + ",";
+        return result + "]";
     }
 
-    
-    /** 
+
+    /**
       Appends @value to the end of this list.
-      
+
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean add( int value) {
-	 if (filledElements == list.length)
-	     expand();
-	 list[filledElements++] = value; //added post-increment
+         // expand if necessary
+         if( filledElements == elements.length) expand();
+
+         elements[ filledElements] = value;
+         filledElements++;
+         // idiomatic version: elements[ filledElements++] = value;
 	 return true;
      }
 
 
-    /** 
-      Double the capacity of the List_inArraySlots, 
-      preserving existing data
+    /**
+      Double the capacity of the List_inArraySlots,
+      preserving existing data.
      */
      private void expand() {
-	 System.out.println( "expand... (for debugging)");
-	 
-	 int[] newList = new int[list.length * 2];
-	 for (int i = 0; i < filledElements; i++)
-	     newList[i] = list[i];
-	 list = newList;
+        System.out.println( "expand... (for debugging)");
+           /* S.O.P. rules for debugging:
+              Working methods should be silent. But during
+              development, the programmer must verify that
+              this method is called when that is appropriate.
+              So test using the println(), then comment it out.
+              */
+        int[] bigger = new int[ elements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            bigger[ elemIndex] = elements[ elemIndex];
+        elements = bigger;
+     }
+
+    
+    /**
+      accessor
+      @return element @index from this list
+      precondition: @index is within the bounds of the array.
+     */
+    public int get( int index ) {
+	return elements[index];
+    }
+
+    
+    /**
+      Set value at @index to @newValue
+
+      @return old value at @index
+      @precondition: @index is within the bounds of this list.
+     */
+    public int set( int index, int newValue ) {
+	int oldValue = elements[index];
+	elements[index] = newValue;
+	return oldValue;
+    }
+
+    
+    /**
+      Insert @value at position @index in this list.
+
+      Shift the element currently at that position (if any)
+      and any subsequent elements to the right
+      (that is, increase the index associated with each).
+     */
+     public void add( int index, int value) {
+	 if( filledElements == elements.length) expand();
+	 for ( int elemIndex = filledElements;  elemIndex > index ; elemIndex--)
+	     elements[elemIndex] = elements[elemIndex - 1];
+	 filledElements++;
+	 elements[index] = value;
+     }
+
+    /**
+      Remove the element at position @index in this list.
+
+      Shift any subsequent elements to the left (that is,
+      decrease the index associated with each).
+
+      @return the value that was removed from the list
+     */
+     public int remove( int index) {
+	 int oldValue = elements[index];
+	 for ( int elemIndex = index ; elemIndex < filledElements; elemIndex++)
+	     elements[elemIndex] = elements[elemIndex + 1];
+	 filledElements--;
+	 return oldValue;
      }
 }
+
+
+
