@@ -41,6 +41,7 @@ public class UserOfList {
 
 	// --------- end of "code that worked in v0" ---------
 
+	
 	// test accessor
         System.out.println( "sample elements from list:");
         for( elemIndex = 1; elemIndex < list.size(); elemIndex *= 2 ) {
@@ -76,7 +77,6 @@ public class UserOfList {
             "expecting:" + System.lineSeparator()
           + "[29,0,23,23,23,19, NO -1 HERE! -2,-3...]");
 
-
         // --------- end of "code that worked in v1" ---------
 	
     } //end of main()
@@ -94,6 +94,7 @@ public class UserOfList {
 			   );
     }
 
+    
     /**
       Test the 2-argument add( index, value) method.
      */
@@ -110,5 +111,4 @@ public class UserOfList {
           + System.lineSeparator()
         );
     }
-   
 }
