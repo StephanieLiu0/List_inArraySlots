@@ -113,6 +113,12 @@ public class List_inArraySlots {
 	 filledElements++;
      }
 
+    /**
+      Add a value at the beginning of the array.
+     */
+     public void addAsHead(int value) {
+	 add(0, value);
+     }
 	    
 
     /**
