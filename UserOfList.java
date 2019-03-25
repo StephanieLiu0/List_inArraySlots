@@ -77,6 +77,9 @@ public class UserOfList {
             "expecting:" + System.lineSeparator()
           + "[29,0,23,23,23,19, NO -1 HERE! -2,-3...]");
 
+	// test addAtHead method
+	add
+
         // --------- end of "code that worked in v1" ---------
 	
     } //end of main()
@@ -111,4 +114,23 @@ public class UserOfList {
           + System.lineSeparator()
         );
     }
+
+    /**
+      Test the addAtHead( value) method.
+     */
+    private static void addAtTest( int addAt
+                                 , int value
+                                 ) {
+        list.add( addAt, value);
+        System.out.println(
+            "insert " + value
+          + " at position " + addAt
+          + ", resulting in "  + list.size() + " elements:"
+          + System.lineSeparator()
+          + list
+          + System.lineSeparator()
+        );
+    }
+
+
 }
